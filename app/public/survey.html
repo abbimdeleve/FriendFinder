@@ -23,25 +23,67 @@
 
     <div class="main">
         <div class="rowQuestion">
-            <div class="col">Survey Question Here</div>
-        </div>
-        <div class="rowAnswer">
-            <div class="dropdown">
-                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Choose 1-5
-                    <span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                    <li><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                </ul>
+            <div class="col">
+                <button id="startSurvey">Take Survey!</button>
+                <h2 id="question"></h2>
+            </div>
+            <div class="col" id="answer">
+                <select class="mdb-select md-form colorful-select dropdown-ins">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
             </div>
         </div>
-    </div>
 
-    <script type=text/javascript> 
-    
-    </script> 
-</body>
-</html>
+        <script type=text/javascript> 
+        $(document).ready(function () {
+        const questions = [
+
+            {
+                q1: "You're a fan of nature."
+            },
+            {
+                q2: "You would rather read a book than watch tv."
+            },
+            {
+                q3: "You enjoy drinking alcohol."
+            },
+            {
+                q4: "You like trying new things."
+            },
+            {
+                q5: "You support Donald Trump."
+            },
+            {
+                q6: "You are religious/spiritual."
+            },
+            {
+                q7: "You like the band Phish."
+            },
+            {
+                q8: "You watch the TV show 'Big Bang Theory.'"
+            },
+            {
+                q9: "You have a pet/love animals."
+            },
+            {
+                q10: "You have ever used the phrase 'cool beans.'"
+            }
+        ]
+        $("#startSurvey").on("click", startSurvey());
+        function startSurvey () { 
+            $("#startSurvey").clear();
+            takeSurvey();
+        }
+        function takeSurvey () {
+        for (let i=0; i<questions.length; i++){
+            $("#question").text("");
+            $("#question").append(questions[i]);
+        }
+    }
+    takeSurvey()
+    })
+        </script> </body> </html>
