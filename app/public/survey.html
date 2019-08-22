@@ -10,7 +10,10 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Spectral|Unica+One&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -22,68 +25,206 @@
     </div>
 
     <div class="main">
-        <div class="rowQuestion">
-            <div class="col">
-                <button id="startSurvey">Take Survey!</button>
-                <h2 id="question"></h2>
+        <div class="row">
+            <div class="colInfo">
+            <h2>Information</h2>
+        </div>
+        </div>
+        <div class="rowInput">
+            <div class="col-md-4">
+                <form>
+                    <div class="form-group">
+                        <label for="friendName">Enter your name</label>
+                        <input type="name" class="form-control" id="friendName" aria-describedby="nameHelp"
+                            placeholder="Your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="friendPic">Link to photo image</label>
+                        <input type="link" class="form-control" id="friendPic" placeholder="Link to picture">
+                    </div>
+                </form>
             </div>
-            <div class="col" id="answer">
-                <select class="mdb-select md-form colorful-select dropdown-ins">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
+            <div class="row">
+                <div class="colQueries">
+                    <h2>Queries</h2>
+                </div>
+            </div>
+            <div class="rowQ1">
+                <div class="col-md-6" id="query">1. You're a fan of nature.</div>
+                <div class="col-md-3" id="answer1">
+                    <select class="mdb-select md-form colorful-select dropdown-ins" id="dropDown1">
+                        <option value="1">Strongly Disagree 1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">Strongly Agree 5</option>
+                    </select>
+                </div>
+            </div>
+            <div class="rowQ2">
+                <div class="col-md-6" id="query">2. You would rather read a book than watch tv.</div>
+                <div class="col-md-3" id="answer2">
+                    <select class="mdb-select md-form colorful-select dropdown-ins" id="dropDown2">
+                        <option value="1">Strongly Disagree 1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">Strongly Agree 5</option>
+                    </select>
+                </div>
+            </div>
+            <div class="rowQ3">
+                <div class="col-md-6" id="query">3. You enjoy drinking alcohol.</div>
+                <div class="col-md-3" id="answer3">
+                    <select class="mdb-select md-form colorful-select dropdown-ins" id="dropDown3">
+                        <option value="1">Strongly Disagree 1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">Strongly Agree 5</option>
+                    </select>
+                </div>
+            </div>
+            <div class="rowQ4">
+                <div class="col-md-6" id="query">4. You like trying new things.</div>
+                <div class="col-md-3" id="answer4">
+                    <select class="mdb-select md-form colorful-select dropdown-ins" id="dropDown4">
+                        <option value="1">Strongly Disagree 1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">Strongly Agree 5</option>
+                    </select>
+                </div>
+            </div>
+            <div class="rowQ5">
+                <div class="col-md-6" id="query">5. You support Donald Trump.</div>
+                <div class="col-md-3" id="answer5">
+                    <select class="mdb-select md-form colorful-select dropdown-ins" id="dropDown5">
+                        <option value="1">Strongly Disagree 1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">Strongly Agree 5</option>
+                    </select>
+                </div>
+            </div>
+            <div class="rowQ6">
+                <div class="col-md-6" id="query">6. You are religious/spiritual.</div>
+                <div class="col-md-3" id="answer6">
+                    <select class="mdb-select md-form colorful-select dropdown-ins" id="dropDown6">
+                        <option value="1">Strongly Disagree 1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">Strongly Agree 5</option>
+                    </select>
+                </div>
+            </div>
+            <div class="rowQ7">
+                <div class="col-md-6" id="query">7. You like the band Phish.</div>
+                <div class="col-md-3" id="answer7">
+                    <select class="mdb-select md-form colorful-select dropdown-ins" id="dropDown7">
+                        <option value="1">Strongly Disagree 1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">Strongly Agree 5</option>
+                    </select>
+                </div>
+            </div>
+            <div class="rowQ8">
+                <div class="col-md-6" id="query">8. You watch the TV show "Big Bang Theory."</div>
+                <div class="col-md-3" id="answer8">
+                    <select class="mdb-select md-form colorful-select dropdown-ins" id="dropDown8">
+                        <option value="1">Strongly Disagree 1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">Strongly Agree 5</option>
+                    </select>
+                </div>
+            </div>
+            <div class="rowQ9">
+                <div class="col-md-6" id="query">9. You have a pet/love animals.</div>
+                <div class="col-md-3" id="answer9">
+                    <select class="mdb-select md-form colorful-select dropdown-ins" id="dropDown9">
+                        <option value="1">Strongly Disagree 1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">Strongly Agree 5</option>
+                    </select>
+                </div>
+            </div>
+            <div class="rowQ10">
+                <div class="col-md-6" id="query">10. You have ever used the phrase "cool beans."</div>
+                <div class="col-md-3" id="answer10">
+                    <select class="mdb-select md-form colorful-select dropdown-ins" id="dropDown10">
+                        <option value="1">Strongly Disagree 1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">Strongly Agree 5</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button type="submit" class="btn" id="submit">Submit</button>
+                </div>
             </div>
         </div>
+    </div>
 
-        <script type=text/javascript> 
-        $(document).ready(function () {
-        const questions = [
-
-            {
-                q1: "You're a fan of nature."
-            },
-            {
-                q2: "You would rather read a book than watch tv."
-            },
-            {
-                q3: "You enjoy drinking alcohol."
-            },
-            {
-                q4: "You like trying new things."
-            },
-            {
-                q5: "You support Donald Trump."
-            },
-            {
-                q6: "You are religious/spiritual."
-            },
-            {
-                q7: "You like the band Phish."
-            },
-            {
-                q8: "You watch the TV show 'Big Bang Theory.'"
-            },
-            {
-                q9: "You have a pet/love animals."
-            },
-            {
-                q10: "You have ever used the phrase 'cool beans.'"
-            }
-        ]
-        $("#startSurvey").on("click", startSurvey());
-        function startSurvey () { 
-            $("#startSurvey").clear();
-            takeSurvey();
-        }
-        function takeSurvey () {
-        for (let i=0; i<questions.length; i++){
-            $("#question").text("");
-            $("#question").append(questions[i]);
-        }
-    }
-    takeSurvey()
+    <div class="modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Modal title</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>Friend</p>
+                  <p id="newFriendName"></p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+    <script type=text/javascript>
+    $(document).ready(function () { 
+        
+        $("#submit").on("click", function(event) { 
+            event.preventDefault(); 
+            console.log("clicked")
+            newFriend = {
+                name: $("#friendName").val().trim(),
+                photo: $("#friendPic").val().trim(),
+                scores: [$("#dropDown1").val(),
+                 $("#dropDown2").val(),
+                 $("#dropDown3").val(),
+                 $("#dropDown4").val(),
+                 $("#dropDown5").val(),
+                 $("#dropDown6").val(),
+                 $("#dropDown7").val(),
+                 $("#dropDown8").val(),
+                 $("#dropDown9").val(),
+                 $("#dropDown10").val()]
+            };
+                 
+            $.post("/api/friends", newFriend).then( function (data) {
+                console.log(data)
+                $("#newFriendName").text(data.name);
+                $(".modal").modal('show')
+            });
+        });
     })
-        </script> </body> </html>
+        </script> 
+        </body>
+        </html>

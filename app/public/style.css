@@ -7,3 +7,27 @@
 .lead {
     font-family: 'Spectral', serif;
 }
+.colInfo {
+    padding-left: 40px;
+    font-family: 'Unica One', cursive;
+}
+.colQueries {
+    padding-left: 40px;
+    font-family: 'Unica One', cursive;
+}
+#query {
+    font-size: 20px;
+    font-family: 'Spectral', serif;
+    padding: 20px;
+}
+#dropDown {
+    border-radius: 25px;
+    font-size: 15px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+#submit {
+    border: 20px;
+    margin: 20px;
+    border-radius: 25px;
+    background:  rgba(103, 201, 204, 0.637);
+}
